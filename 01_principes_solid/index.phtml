@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <title>ProBio</title>
+</head>
+<body>
+    <header id="header" class="containter-fluid">
+        <div class="container">
+            <p class="h1">ProBio</p>
+        </div>
+    </header>
+
+    <?php if($flashBag->hasMessages()): ?>
+        <section  class="container">
+            <?php foreach( $flashBag->readMessages() as $message): ?>
+                <p><?= $message ?></p>
+            <?php endforeach ?>
+        </section>
+    <?php endif ?>
+
+    <section class="flex-fill pure-g container">
+        <?php foreach($products as $product): ?>
+            <article class="pure-u-1-6">
+                <h2><?= $product->name ?></h2>
+                <p><?= number_format($product->price / 100,2) ?> €</p>
+                <p><a href="<?= _ROOT_ ?>add_to_cart.php?name=<?= $product->name ?>">Ajouter au panier</a></p>
+            </article>
+        <?php endforeach ?>
+    </section>
+    <footer id="footer" class="containter-fluid">
+        <div class="container">
+            <p>Copyright 2019</p>
+        </div>
+    </footer>
+</body>
+</html>

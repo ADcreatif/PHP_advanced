@@ -1,0 +1,23 @@
+{
+    "name": "alan/01_solid_cart",
+    "require-dev": {
+        "phpunit/phpunit": "^8.4"
+    },
+    "authors": [
+        {
+            "name": "ADcreatif",
+            "email": "contact@ad-creatif.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ProBio\\": "classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {}
+}
